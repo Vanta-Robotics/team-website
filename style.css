@@ -33,7 +33,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('../assets/black-hole.jpg');
+    background-image: url("assets/blackhole-bg.webp");
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -287,7 +287,51 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* --- Team Section --- */
+.team-category {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--accent-color);
+    display: inline-block;
+}
 
+.team-grid {
+    display: grid;
+    /* This creates a responsive grid that shows as many columns as fit */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.team-member {
+    background: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px var(--accent-glow);
+}
+
+.member-name {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--primary-text);
+    margin-bottom: 0.25rem;
+}
+
+.member-role {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
 /* --- Custom Highlight/Selection Color --- */
 /* For modern browsers */
 ::selection {
