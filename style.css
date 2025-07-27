@@ -287,3 +287,16 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* --- Custom Highlight/Selection Color --- */
+/* For modern browsers */
+::selection {
+    background-color: var(--accent-color); /* The deep purple */
+    color: var(--primary-text); /* The light text color for contrast */
+}
+
+/* For older Firefox browser compatibility */
+::-moz-selection {
+    background-color: var(--accent-color); /* The deep purple */
+    color: var(--primary-text); /* The light text color for contrast */
+}
