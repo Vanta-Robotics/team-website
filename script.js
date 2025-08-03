@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     type();
 
-    // --- NEW: Spotlight Effect Logic ---
-    // This updates the CSS variables --mouse-x and --mouse-y based on mouse movement.
+    // --- Spotlight Effect Logic ---
     document.addEventListener('mousemove', e => {
         document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
         document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
@@ -41,13 +40,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- NEW: Season Countdown Timer Logic ---
+    const countdownTargetDate = new Date("September 6, 2025 09:00:00").getTime();
+
+    const countdownFunction = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countdownTargetDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Ensure two digits by padding with a "0" if needed
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+        // If the countdown is over, write some text
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("countdown-timer").innerHTML = "<h3>The Season is Here!</h3>";
+        }
+    }, 1000);
+
+
     // --- Fade-in elements on scroll (Intersection Observer) ---
     const fadeElements = document.querySelectorAll('.fade-in');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -56,8 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
-    fadeElements.forEach(el => {
-        observer.observe(el);
-    });
+    fadeElements.forEach(el => observer.observe(el));
 
 });
