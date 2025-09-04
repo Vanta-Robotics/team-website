@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- NEW: Season Countdown Timer Logic ---
-    const countdownTargetDate = new Date("September 6, 2025 09:00:00").getTime();
+    const countdownTargetDate = new Date("September 6, 2025 12:00:00").getTime();
 
     const countdownFunction = setInterval(() => {
         const now = new Date().getTime();
