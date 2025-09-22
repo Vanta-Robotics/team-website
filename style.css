@@ -5,11 +5,29 @@
     --accent-color: #7e22ce;
     --accent-glow: rgba(126, 34, 206, 0.5);
     --secondary-bg: #111111;
-    --font-heading: 'Orbitron', sans-serif;
-    --font-body: 'Poppins', sans-serif;
+    --font-heading: 'MuseoModerno', sans-serif;
+    --font-body: 'Garet', sans-serif;
     --mouse-x: 50vw;
     --mouse-y: 50vh;
 }
+/* --- Local Font Definitions --- */
+@font-face {
+    font-family: 'Garet';
+    src: url('fonts/Garet-Book.woff2') format('woff2'),
+    url('fonts/Garet-Book.woff') format('woff');
+    font-weight: 400; /* CORRECTED: Book weight is 400 (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Garet';
+    src: url('fonts/Garet-Heavy.woff2') format('woff2'),
+    url('fonts/Garet-Heavy.woff') format('woff');
+    font-weight: 800; /* CORRECTED: Heavy weight is 800 (or 900) */
+    font-style: normal;
+}
+
+
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -57,7 +75,16 @@ header {
     -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 100;
 }
 nav { display: flex; justify-content: space-between; align-items: center; }
-nav .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--primary-text); text-decoration: none; transition: color 0.3s; }
+/* In your Header & Navigation styles */
+nav .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 900; /* ADD THIS LINE */
+}
+
 nav .logo .team-number { color: var(--accent-color); font-size: 1rem; }
 nav ul { list-style: none; display: flex; gap: 2rem; }
 nav ul li a { color: var(--primary-text); text-decoration: none; font-weight: 400; transition: color 0.3s, text-shadow 0.3s; }
