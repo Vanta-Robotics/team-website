@@ -125,9 +125,44 @@ section { padding: 120px 5%; position: relative; display: flex; align-items: cen
 
 /* --- Countdown Section --- */
 #countdown-timer { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
+/* New incoming meet countdown uses same layout */
+#meet-countdown { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
 .time-block { background-color: #111; padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; min-width: 100px; }
 .time-value { font-family: 'Orbitron', monospace; font-weight: 900; font-size: 3rem; color: var(--primary-text); display: block; }
 .time-label { font-size: 0.9rem; color: #bbb; }
+
+/* --- Incoming (Bot Incoming) styles --- */
+.mysterious-subtitle { color: #9ca3af; letter-spacing: 0.08em; text-transform: lowercase; margin-bottom: 1rem; }
+.hacker-text {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.6;
+    color: #9effa9;
+    text-shadow: 0 0 10px rgba(0,255,128,0.3), 0 0 20px rgba(0,255,128,0.15);
+    letter-spacing: 0.12em;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(0,255,128,0.15);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+.hacker-text::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0px,
+        rgba(0,0,0,0) 2px,
+        rgba(0,255,128,0.05) 3px,
+        rgba(0,255,128,0.05) 4px
+    );
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+.glow-text { font-family: var(--font-heading); color: var(--primary-text); text-shadow: 0 0 12px var(--accent-glow); }
+.stay-tuned { color: #bbb; opacity: 0.9; font-style: italic; margin-top: 1rem; letter-spacing: 0.15em; }
 /* --- Sponsors & Partners --- */
 .sponsor-grid {
     display: flex;
