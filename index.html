@@ -3,165 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanta Robotics - FTC Team #31000</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Vanta Robotics | #31000</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-<div id="blackhole-bg"></div>
+<!-- 3D Background -->
+<div id="canvas-container"></div>
 
 <header>
+    <a href="#" class="logo">VANTA <span>#31000</span></a>
     <nav>
-        <a href="#hero" class="logo">VANTA ROBOTICS <span class="team-number">#31000</span></a>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#team">Team</a></li>
+            <li><a href="#resources">Resources</a></li>
             <li><a href="#incoming">Incoming</a></li>
             <li><a href="#sponsors">Sponsors</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    <div class="menu-toggle">☰</div>
 </header>
 
 <main>
+    <!-- HERO -->
     <section id="hero">
         <div class="hero-content">
-            <h1 id="hero-title"></h1>
-            <p class="subtitle fade-in">FTC Team #31000 // Engineering the Future</p>
-            <a href="#about" class="btn fade-in">Discover More</a>
+            <p class="hero-subtitle fade-up">Engineering the Unknown</p>
+            <h1 class="hero-title fade-up">VANTA<br>ROBOTICS</h1>
+            <div class="fade-up btn-container">
+                <a href="#about" class="btn">Discover More</a>
+            </div>
         </div>
+        <div class="scroll-indicator">↓</div>
     </section>
 
-    <section id="about" class="content-section">
+    <!-- ABOUT -->
+    <section id="about">
         <div class="container">
-            <h2 class="section-title fade-in" data-text="WHO WE ARE">WHO WE ARE</h2>
-            <div class="about-content fade-in">
-                <img src="assets/FTCLogoWhite.png" alt="Vanta Robotics Team" class="about-image">
-                <div>
-                    <p>Based in the vibrant tech hub of Orlando, Florida, Vanta Robotics is a dedicated FIRST Tech Challenge team fueled by a passion for innovation and problem-solving. We are a collective of students, mentors, and community members committed to pushing the boundaries of technology through collaboration, creativity, and competition. Our mission is to inspire the next generation of STEM leaders while building advanced, competitive robots.</p>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">20+ </span>
-                            <span class="stat-label">Years of Combined FTC Experience</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Years of Combined FRC Experience</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">11</span>
-                            <span class="stat-label">Passionate Members</span>
-                        </div>
-                    </div>
+            <h2 class="fade-up">WHO WE ARE</h2>
+            <div class="about-grid fade-up">
+                <div class="about-text glass-panel">
+                    <p>Based in the vibrant tech hub of Orlando, Florida, Vanta Robotics is a dedicated FIRST Tech Challenge team fueled by a passion for innovation and problem-solving.</p>
+                    <p>We are a collective of students, mentors, and community members committed to pushing the boundaries of technology through collaboration, creativity, and competition. Our mission is to inspire the next generation of STEM leaders while building advanced, competitive robots.</p>
+                </div>
+                <div class="stats-container">
+                    <div class="stat fade-up" style="transition-delay: 0.1s"><h3>20+</h3><p>Years FTC Experience</p></div>
+                    <div class="stat fade-up" style="transition-delay: 0.2s"><h3>15+</h3><p>Years FRC Experience</p></div>
+                    <div class="stat fade-up" style="transition-delay: 0.3s"><h3>11</h3><p>Passionate Members</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="team" class="content-section">
+    <!-- TEAM -->
+    <section id="team">
         <div class="container">
-            <h2 class="section-title fade-in" data-text="MEET THE TEAM">MEET THE TEAM</h2>
-            <h3 class="team-category fade-in">Team Members</h3>
-            <div class="team-grid fade-in">
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Ismail Akdeniz</h4><p class="member-role">Mechanical Design & 3D Printing</p></div><div class="member-bio"><p>Ismail translates complex digital concepts into tangible reality, specializing in rapid prototyping and manufacturing with our in-house 3D printing capabilities.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Arav Sonawane</h4><p class="member-role">CAD & System Architecture</p></div><div class="member-bio"><p>As a lead designer, Arav architects the robot's core structure in CAD, ensuring every component integrates flawlessly for peak performance and reliability.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Monish Saravana</h4><p class="member-role">Software Development & Digital Outreach</p></div><div class="member-bio"><p>Monish spearheads our software strategy, developing advanced control systems and computer vision, while also creating digital tools to empower the wider FTC community.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Shiva Patel</h4><p class="member-role">Brand Architect & Digital Engagement</p></div><div class="member-bio"><p>Shiva is the architect of our public identity, igniting community hype and forging the strategic brand partnerships that will make Vanta Robotics a globally recognized name.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Josef Junga</h4><p class="member-role">Game Strategy & Integration</p></div><div class="member-bio"><p>Josef is our strategic mind, analyzing the game to devise winning tactics and ensuring our robot's design directly serves our competitive goals.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Shrey Trivedi</h4><p class="member-role">Drive Team & Performance Tuning</p></div><div class="member-bio"><p>With ice in his veins, Shrey pilots the robot during competition, translating strategy into action and providing critical feedback for performance tuning.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Armando Collazo</h4><p class="member-role">CNC Fabrication & Machining</p></div><div class="member-bio"><p>Armando brings precision engineering to the team, utilizing CNC fabrication to create custom-machined parts that offer unparalleled strength and accuracy.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Eydan Collazo</h4><p class="member-role">Mechanical Assembly & Prototyping</p></div><div class="member-bio"><p>Eydan is a versatile builder, rapidly iterating on mechanical prototypes and meticulously assembling the final robot with a keen eye for detail and durability.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Anum Ali</h4><p class="member-role">Electronics & Power Systems</p></div><div class="member-bio"><p>Anum manages the robot's nervous system, meticulously wiring the electronics and optimizing power distribution to ensure flawless operation under pressure.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Daniyal Siddiquie</h4><p class="member-role">Hardware & Software Integration</p></div><div class="member-bio"><p>Daniyal serves as the crucial link between our code and our physical machine, ensuring that software commands translate perfectly into mechanical action.</p></div></div>
+            <h2 class="fade-up">MEET THE TEAM</h2>
+
+            <h3 class="team-category fade-up">Team Members</h3>
+            <div class="team-grid">
+                <!-- Original Members & Bios -->
+                <div class="team-card glass-panel fade-up"><h4>Ismail Akdeniz</h4><span class="member-role">Mechanical Design & 3D Printing</span><div class="member-bio">Ismail translates complex digital concepts into tangible reality, specializing in rapid prototyping and manufacturing with our in-house 3D printing capabilities.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Arav Sonawane</h4><span class="member-role">CAD & System Architecture</span><div class="member-bio">As a lead designer, Arav architects the robot's core structure in CAD, ensuring every component integrates flawlessly for peak performance and reliability.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Monish Saravana</h4><span class="member-role">Software Development & Digital Outreach</span><div class="member-bio">Monish spearheads our software strategy, developing advanced control systems and computer vision, while also creating digital tools to empower the wider FTC community.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Shiva Patel</h4><span class="member-role">Brand Architect & Digital Engagement</span><div class="member-bio">Shiva is the architect of our public identity, igniting community hype and forging the strategic brand partnerships that will make Vanta Robotics a globally recognized name.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Josef Junga</h4><span class="member-role">Game Strategy & Integration</span><div class="member-bio">Josef is our strategic mind, analyzing the game to devise winning tactics and ensuring our robot's design directly serves our competitive goals.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Shrey Trivedi</h4><span class="member-role">Drive Team & Performance Tuning</span><div class="member-bio">With ice in his veins, Shrey pilots the robot during competition, translating strategy into action and providing critical feedback for performance tuning.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Armando Collazo</h4><span class="member-role">CNC Fabrication & Machining</span><div class="member-bio">Armando brings precision engineering to the team, utilizing CNC fabrication to create custom-machined parts that offer unparalleled strength and accuracy.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Eydan Collazo</h4><span class="member-role">Mechanical Assembly & Prototyping</span><div class="member-bio">Eydan is a versatile builder, rapidly iterating on mechanical prototypes and meticulously assembling the final robot with a keen eye for detail and durability.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Anum Ali</h4><span class="member-role">Electronics & Power Systems</span><div class="member-bio">Anum manages the robot's nervous system, meticulously wiring the electronics and optimizing power distribution to ensure flawless operation under pressure.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Daniyal Siddiquie</h4><span class="member-role">Hardware & Software Integration</span><div class="member-bio">Daniyal serves as the crucial link between our code and our physical machine, ensuring that software commands translate perfectly into mechanical action.</div></div>
             </div>
 
-            <h3 class="team-category fade-in">Coaches & Mentors</h3>
-            <div class="team-grid fade-in">
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Dmitri Morales</h4><p class="member-role">Head Coach & Mentor - Disney Software Engineer</p></div><div class="member-bio"><p>As Head Coach, Dmitri channels his experience as a Disney Software Engineer and Duke Bioengineering graduate to architect our technical strategy and push the boundaries of what's possible in FTC.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Tom Wilk Jr.</h4><p class="member-role">Mentor - Walt Disney Imagineering</p></div><div class="member-bio"><p>Tom brings the magic of Walt Disney Imagineering to our workshop, providing unparalleled insight into professional robotics and animatronics to help us engineer truly innovative mechanical systems.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Eleni Morales</h4><p class="member-role">Mentor - MIT BattleBots</p></div><div class="member-bio"><p>Bringing a battle-hardened perspective from the legendary MIT BattleBots team, Eleni mentors our design process with a focus on durability, rapid prototyping, and the creative problem-solving required to win.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Irian De Jesus</h4><p class="member-role">Coach</p></div><div class="member-bio"><p>Irian provides essential guidance and project management, keeping the team focused, organized, and prepared for the logistical challenges of a competitive season.</p></div></div>
-                <div class="team-member"><div class="member-header"><h4 class="member-name">Tristan Junga</h4><p class="member-role">Coach & Alumni Advisor</p></div><div class="member-bio"><p>Leveraging his extensive FIRST experience and studies at the University of Florida, Tristan offers invaluable technical advice and strategic insight to the team.</p></div></div>
+            <h3 class="team-category fade-up">Coaches & Mentors</h3>
+            <div class="team-grid">
+                <div class="team-card glass-panel fade-up"><h4>Dmitri Morales</h4><span class="member-role">Head Coach & Mentor - Disney Software Engineer</span><div class="member-bio">As Head Coach, Dmitri channels his experience as a Disney Software Engineer and Duke Bioengineering graduate to architect our technical strategy and push the boundaries of what's possible in FTC.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Tom Wilk Jr.</h4><span class="member-role">Mentor - Walt Disney Imagineering</span><div class="member-bio">Tom brings the magic of Walt Disney Imagineering to our workshop, providing unparalleled insight into professional robotics and animatronics to help us engineer truly innovative mechanical systems.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Eleni Morales</h4><span class="member-role">Mentor - MIT BattleBots</span><div class="member-bio">Bringing a battle-hardened perspective from the legendary MIT BattleBots team, Eleni mentors our design process with a focus on durability, rapid prototyping, and the creative problem-solving required to win.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Irian De Jesus</h4><span class="member-role">Coach</span><div class="member-bio">Irian provides essential guidance and project management, keeping the team focused, organized, and prepared for the logistical challenges of a competitive season.</div></div>
+                <div class="team-card glass-panel fade-up"><h4>Tristan Junga</h4><span class="member-role">Coach & Alumni Advisor</span><div class="member-bio">Leveraging his extensive FIRST experience and studies at the University of Florida, Tristan offers invaluable technical advice and strategic insight to the team.</div></div>
             </div>
         </div>
     </section>
 
-    <section id="incoming" class="content-section">
+    <!-- RESOURCES SECTION -->
+    <section id="resources">
         <div class="container">
-            <h2 class="section-title fade-in" data-text="BOT INCOMING">BOT INCOMING</h2>
-            <p class="fade-in mysterious-subtitle">signal acquired. compiling intent. infiltration imminent.</p>
-            <div id="hacker-text" class="hacker-text fade-in" aria-label="cryptic stream"></div>
-            <div id="meet-countdown" class="fade-in">
-                <div class="time-block"><span class="time-value" id="meet-days">00</span><span class="time-label">Days</span></div>
-                <div class="time-block"><span class="time-value" id="meet-hours">00</span><span class="time-label">Hours</span></div>
-                <div class="time-block"><span class="time-value" id="meet-minutes">00</span><span class="time-label">Minutes</span></div>
-                <div class="time-block"><span class="time-value" id="meet-seconds">00</span><span class="time-label">Seconds</span></div>
+            <h2 class="fade-up">RESOURCES</h2>
+            <div class="glass-panel resource-highlight fade-up">
+                <div class="resource-content">
+                    <h3 class="glow-text">FTC SECRETS</h3>
+                    <p>The most comprehensive analytics platform in the entire FIRST Tech Challenge ecosystem. Data-driven insights to engineer victory.</p>
+                    <a href="https://secrets.team31000.org" target="_blank" class="btn-fill">Coming soon...</a>
+                </div>
             </div>
-            <p class="fade-in stay-tuned">stay tuned…</p>
         </div>
     </section>
 
-    <section id="sponsors" class="content-section">
+    <!-- INCOMING / COUNTDOWN -->
+    <section id="incoming">
         <div class="container">
-            <h2 class="section-title fade-in" data-text="OUR PARTNERS">OUR PARTNERS</h2>
-            <p class="fade-in">Our journey is made possible by the generous support of our fiscal sponsor and partners.</p>
-            <!-- UPDATED: Grid now contains clickable logos and the new CTA button -->
-            <div class="sponsor-grid fade-in">
-                <!-- Clickable Hack Club Logo -->
-                <a href="https://hcb.hackclub.com/vanta-robotics/" target="_blank" class="sponsor-logo animated-border">
-                    <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club Logo">
-                </a>
-                <a href="https://plusvacationhomes.com/" target="_blank" class="sponsor-logo animated-border">
-                    <img src="assets/pvh.png" alt="Plus Vacation Homes">
-                </a>
+            <h2 class="fade-up">BOT INCOMING</h2>
 
-                <a href="https://www.linkedin.com/company/orthoped-distributors/" target="_blank" class="sponsor-logo animated-border">
-                    <img src="assets/orthoped.jpeg" alt="Orthoped Distributors">
-                </a>
-                <a href="https://astra.com/" target="_blank" class="sponsor-logo animated-border"><img src="https://astra.com/wp-content/uploads/2020/02/astra-logo-white-final-retina.png" alt="Astra"></a>
+            <div class="countdown-container fade-up">
+                <div class="time-box"><span class="time-number" id="d">00</span><span class="time-label">Days</span></div>
+                <div class="time-box"><span class="time-number" id="h">00</span><span class="time-label">Hours</span></div>
+                <div class="time-box"><span class="time-number" id="m">00</span><span class="time-label">Minutes</span></div>
+                <div class="time-box"><span class="time-number" id="s">00</span><span class="time-label">Seconds</span></div>
+            </div>
 
-                <a href="https://us.polymaker.com/" target="_blank" class="sponsor-logo animated-border"> <img src="assets/polymaker.png" alt="Polymaker"></a>
-                    <a href="https://www.southstatebank.com/" target="_blank" class="sponsor-logo animated-border"> <img src="assets/southstate.webp" alt="Southstate"> </a>
+            <p class="fade-up eclipse-text">Get Ready for <span class="eclipse-name">Eclipse</span></p>
+        </div>
+    </section>
 
-                        <a href="https://www.fravelbrewer.com/" target="_blank" class="sponsor-logo animated-border">
-                            <img src="assets/fravel.png" alt="Fravel Brewer Orthodontics">
-                        </a>
-                            <a href="https://www.akshartours.us/" target="_blank" class="sponsor-logo animated-border">
-                                <img src="https://www.akshartours.us/build/assets/logo-zl_vnmBy.png" alt="Akshar Travels">
-                            </a>
-                                <a href="https://www.diazorthodontics.com/" target="_blank" class="sponsor-logo animated-border">
-                                    <img src="https://www.diazorthodontics.com/assets/images/spotlight/logo.png" alt="Diaz Orthodontics">
-                                </a>
+    <!-- SPONSORS -->
+    <section id="sponsors">
+        <div class="container">
+            <h2 class="fade-up">MISSION PARTNERS</h2>
+            <p class="fade-up" style="margin-bottom: 2rem; color: #888;">Our journey is made possible by the generous support of our sponsors.</p>
 
-                            <!-- Clickable FIRST Logo -->
-                <a href="https://www.firstinspires.org/" target="_blank" class="sponsor-logo animated-border">
-                    <img src="assets/FIRSTLogoNoText.png" alt="FIRST Logo">
+            <div class="sponsor-grid fade-up">
+                <a href="https://hcb.hackclub.com/vanta-robotics/" target="_blank" class="sponsor-item"><img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club"></a>
+                <a href="https://plusvacationhomes.com/" target="_blank" class="sponsor-item"><img src="assets/pvh.png" alt="Plus Vacation Homes"></a>
+                <a href="https://www.linkedin.com/company/orthoped-distributors/" target="_blank" class="sponsor-item"><img src="assets/orthoped.jpeg" alt="Orthoped"></a>
+                <a href="https://astra.com/" target="_blank" class="sponsor-item"><img src="https://astra.com/wp-content/uploads/2020/02/astra-logo-white-final-retina.png" alt="Astra"></a>
+                <a href="https://us.polymaker.com/" target="_blank" class="sponsor-item"><img src="assets/polymaker.png" alt="Polymaker"></a>
+                <a href="https://www.southstatebank.com/" target="_blank" class="sponsor-item"><img src="assets/southstate.webp" alt="Southstate"></a>
+                <a href="https://www.fravelbrewer.com/" target="_blank" class="sponsor-item"><img src="assets/fravel.png" alt="Fravel Brewer"></a>
+                <a href="https://www.akshartours.us/" target="_blank" class="sponsor-item"><img src="assets/akshar.png" alt="Akshar"></a>
+                <a href="https://www.diazorthodontics.com/" target="_blank" class="sponsor-item"><img src="https://www.diazorthodontics.com/assets/images/spotlight/logo.png" alt="Diaz"></a>
+                <a href="https://www.firstinspires.org/" target="_blank" class="sponsor-item"><img src="assets/FIRSTLogoNoText.png" alt="FIRST"></a>
+
+                <!-- CTA -->
+                <a href="mailto:vantarobotics@gmail.com" class="sponsor-item cta-box">
+                    <span>+</span>
+                    <p>Become a Sponsor</p>
                 </a>
-                <!-- NEW, CORRECTED CTA BUTTON -->
-                <a href="mailto:vantarobotics@gmail.com" target="_blank" class="sponsor-cta animated-border">
-                    <span class="cta-plus">＋</span>
-                    <span class="cta-text">Become a Sponsor Today.</span>
-                </a>
-            </div></div>
+            </div>
+        </div>
     </section>
 
 </main>
 
 <footer id="contact">
-    <div class="container">
-        <h2 class="section-title fade-in" data-text="GET IN TOUCH">GET IN TOUCH</h2>
-        <p class="fade-in">Follow our journey or reach out for partnership opportunities.</p>
-        <div class="contact-links fade-in">
-            <a href="mailto:vantarobotics@gmail.com">vantarobotics@gmail.com</a>
-            <a href="https://github.com/vanta-robotics/" target="_blank">GitHub</a>
-            <a href="#" target="_blank">Instagram</a>
-        </div>
-        <img src="assets/FTCLogoWhite.png" alt="FIRST Tech Challenge Logo" class="affiliation-logo">
-        <p class="copyright">© 2025-2026 Vanta Robotics - FTC Team #31000. All Rights Reserved.</p>
+    <div class="footer-links">
+        <a href="mailto:vantarobotics@gmail.com">vantarobotics@gmail.com</a>
+        <a href="https://github.com/vanta-robotics/" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Instagram</a>
     </div>
+    <img src="assets/FTCLogoWhite.png" alt="FTC Logo" class="footer-logo">
+    <p>© 2025-2026 Vanta Robotics - FTC Team #31000. All Rights Reserved.</p>
 </footer>
 
 <script src="script.js"></script>

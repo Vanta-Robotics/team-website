@@ -1,160 +1,194 @@
-document.addEventListener('DOMContentLoaded', () => {
+// --- 1. THREE.JS BACKGROUND SCENE ---
+const initThreeJS = () => {
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x000000, 0.002); // Slightly denser fog for mystery
 
-    // --- Black Hole Scroll Zoom Effect ---
-    const bg = document.getElementById('blackhole-bg');
-    window.addEventListener('scroll', () => {
-        const scrollValue = window.scrollY;
-        const scale = 1 + scrollValue / 2000;
-        bg.style.transform = `scale(${scale})`;
-    });
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 30;
+    camera.position.y = 5;
 
-    // --- Hero Title Typing Effect ---
-    const heroTitle = document.getElementById('hero-title');
-    const titleText = "VANTA ROBOTICS";
-    let charIndex = 0;
-    function type() {
-        if (charIndex < titleText.length) {
-            heroTitle.textContent += titleText.charAt(charIndex);
-            charIndex++;
-            setTimeout(type, 150);
-        } else {
-            heroTitle.style.borderRight = 'none';
-        }
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
+
+    // A. STARFIELD (Reduced count for minimalism)
+    const starsGeometry = new THREE.BufferGeometry();
+    const starsCount = 1200; // Fewer stars
+    const posArray = new Float32Array(starsCount * 3);
+
+    for(let i = 0; i < starsCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 180;
     }
-    type();
-
-    // --- Spotlight Effect Logic ---
-    document.addEventListener('mousemove', e => {
-        document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
-        document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
+    starsGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    const starsMaterial = new THREE.PointsMaterial({
+        size: 0.12,
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.6, // Dimmer stars
     });
+    const starMesh = new THREE.Points(starsGeometry, starsMaterial);
+    scene.add(starMesh);
 
-    // --- Team Member Accordion (Click to Expand) ---
-    const teamMembers = document.querySelectorAll('.team-member');
-    teamMembers.forEach(member => {
-        member.addEventListener('click', () => {
-            if (!member.classList.contains('active')) {
-                teamMembers.forEach(m => m.classList.remove('active'));
-            }
-            member.classList.toggle('active');
-        });
-    });
+    // B. MINIMAL BLACK HOLE RING
+    const diskGeometry = new THREE.BufferGeometry();
+    const diskCount = 2000; // Reduced density
+    const diskPos = new Float32Array(diskCount * 3);
+    const diskColors = new Float32Array(diskCount * 3);
+    const colorInside = new THREE.Color(0x3c096c); // Deep dark purple
+    const colorOutside = new THREE.Color(0x9d4edd); // Soft purple
 
-    // --- Incoming: Meet Countdown (Nov 15, 2025 at 20:30 local) ---
-    const meetTarget = new Date("November 15, 2025 20:30:00").getTime();
+    for(let i = 0; i < diskCount; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        // Thinner ring
+        const radius = 7 + Math.random() * 4;
+        const x = Math.cos(angle) * radius;
+        const z = Math.sin(angle) * radius;
+        // Flatter disk
+        const y = (Math.random() - 0.5) * 0.2;
 
-    function updateMeetCountdown() {
-        const now = Date.now();
-        const distance = meetTarget - now;
-        const clamp = (n) => (n < 0 ? 0 : n);
-        const days = Math.floor(clamp(distance) / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((clamp(distance) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((clamp(distance) % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((clamp(distance) % (1000 * 60)) / 1000);
+        diskPos[i*3] = x;
+        diskPos[i*3+1] = y;
+        diskPos[i*3+2] = z;
 
-        const dEl = document.getElementById('meet-days');
-        const hEl = document.getElementById('meet-hours');
-        const mEl = document.getElementById('meet-minutes');
-        const sEl = document.getElementById('meet-seconds');
-        const container = document.getElementById('meet-countdown');
-        if (!dEl || !hEl || !mEl || !sEl || !container) return;
-
-        if (distance <= 0) {
-            dEl.innerText = '00';
-            hEl.innerText = '00';
-            mEl.innerText = '00';
-            sEl.innerText = '00';
-            container.innerHTML = '<h3 class="glow-text">it begins.</h3>';
-            clearInterval(meetInterval);
-            return;
-        }
-
-        dEl.innerText = String(days).padStart(2, '0');
-        hEl.innerText = String(hours).padStart(2, '0');
-        mEl.innerText = String(minutes).padStart(2, '0');
-        sEl.innerText = String(seconds).padStart(2, '0');
-    }
-    const meetInterval = setInterval(updateMeetCountdown, 1000);
-    updateMeetCountdown();
-
-    // --- Hacker/Cryptic Text Stream ---
-    const hackerEl = document.getElementById('hacker-text');
-    if (hackerEl) {
-        const glyphs = '!@#$%^&*()_+-=[]{};:,./<>?~ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        const phrases = [
-            'BOOTING NODE: VANTA//31000',
-            '30 ARTIFACTS SCORED',
-            '200+ SOLO POINT AUTO',
-            'PRELOAD SCORED WITH SWURRET',
-            'STARTING REV HARDWARE CLIENT',
-            'AUTO AIM WHILE SCORING',
-            'LOADING: PEDRO//PATHFINDER//AUTON',
-            'RANKING: 1ST PLACE',
-        ];
-
-        let target = phrases[0];
-        let frame = 0;
-        let phraseIndex = 0;
-
-        function scrambleTo(targetText, duration = 1200) {
-            const start = performance.now();
-            const base = hackerEl.textContent.padEnd(targetText.length, ' ');
-            const len = Math.max(base.length, targetText.length);
-            function tick(now) {
-                const t = Math.min(1, (now - start) / duration);
-                let out = '';
-                for (let i = 0; i < len; i++) {
-                    if (i < Math.floor(t * len)) {
-                        out += targetText[i] || ' ';
-                    } else {
-                        out += glyphs[(Math.random() * glyphs.length) | 0];
-                    }
-                }
-                hackerEl.textContent = out;
-                if (t < 1) requestAnimationFrame(tick); else setTimeout(nextPhrase, 800);
-            }
-            requestAnimationFrame(tick);
-        }
-
-        function ambientNoise() {
-            // Subtle per-frame jitter to keep it alive between transitions
-            frame++;
-            if (frame % 2 === 0) return; // half-rate
-            const text = hackerEl.textContent;
-            if (!text) return;
-            const chars = text.split('');
-            for (let i = 0; i < 2; i++) { // small random twitches
-                const idx = (Math.random() * chars.length) | 0;
-                if (chars[idx] && chars[idx] !== ' ') {
-                    chars[idx] = glyphs[(Math.random() * glyphs.length) | 0];
-                }
-            }
-            hackerEl.textContent = chars.join('');
-        }
-
-        function nextPhrase() {
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            target = phrases[phraseIndex];
-            scrambleTo(target);
-        }
-
-        // Kickoff
-        scrambleTo(target, 1500);
-        setInterval(ambientNoise, 60);
+        const mixedColor = colorInside.clone().lerp(colorOutside, (radius - 7) / 4);
+        diskColors[i*3] = mixedColor.r;
+        diskColors[i*3+1] = mixedColor.g;
+        diskColors[i*3+2] = mixedColor.b;
     }
 
+    diskGeometry.setAttribute('position', new THREE.BufferAttribute(diskPos, 3));
+    diskGeometry.setAttribute('color', new THREE.BufferAttribute(diskColors, 3));
 
-    // --- Fade-in elements on scroll (Intersection Observer) ---
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    fadeElements.forEach(el => observer.observe(el));
+    const diskMaterial = new THREE.PointsMaterial({
+        size: 0.1,
+        vertexColors: true,
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+        opacity: 0.6 // More subtle
+    });
+    const diskMesh = new THREE.Points(diskGeometry, diskMaterial);
+    diskMesh.rotation.x = 0.5;
+    scene.add(diskMesh);
 
+    // C. THE VOID
+    const voidGeo = new THREE.SphereGeometry(6.5, 32, 32); // Slightly larger void
+    const voidMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
+    const voidMesh = new THREE.Mesh(voidGeo, voidMat);
+    scene.add(voidMesh);
+
+    // MOUSE INTERACTION (Damped significantly)
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    const windowHalfX = window.innerWidth / 2;
+    const windowHalfY = window.innerHeight / 2;
+
+    document.addEventListener('mousemove', (event) => {
+        mouseX = (event.clientX - windowHalfX);
+        mouseY = (event.clientY - windowHalfY);
+    });
+
+    const clock = new THREE.Clock();
+
+    const animate = () => {
+        const elapsedTime = clock.getElapsedTime();
+
+        // Much smaller multiplier for very subtle movement
+        targetX = mouseX * 0.0005;
+        targetY = mouseY * 0.0005;
+
+        // Very slow rotation
+        diskMesh.rotation.z -= 0.0008;
+
+        // Smooth camera drift
+        diskMesh.rotation.x += 0.02 * (targetY - diskMesh.rotation.x);
+        diskMesh.rotation.y += 0.02 * (targetX - diskMesh.rotation.y);
+
+        starMesh.rotation.y = elapsedTime * 0.02;
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+};
+
+initThreeJS();
+
+// --- 2. COUNTDOWN TIMER (Target: Dec 13) ---
+const countdown = () => {
+    const now = new Date();
+    let targetYear = now.getFullYear();
+    const targetDate = new Date(`December 13, ${targetYear} 00:00:00`).getTime();
+
+    if(now.getTime() > targetDate) {
+        targetYear++;
+    }
+
+    const countDate = new Date(`December 13, ${targetYear} 08:00:00`).getTime();
+
+    const update = () => {
+        const currentTime = new Date().getTime();
+        const gap = countDate - currentTime;
+
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+
+        const d = Math.floor(gap / day);
+        const h = Math.floor((gap % day) / hour);
+        const m = Math.floor((gap % hour) / minute);
+        const s = Math.floor((gap % minute) / second);
+
+        if (gap > 0) {
+            document.getElementById('d').innerText = d < 10 ? '0' + d : d;
+            document.getElementById('h').innerText = h < 10 ? '0' + h : h;
+            document.getElementById('m').innerText = m < 10 ? '0' + m : m;
+            document.getElementById('s').innerText = s < 10 ? '0' + s : s;
+        }
+    };
+    setInterval(update, 1000);
+    update();
+};
+countdown();
+
+// --- 3. SCROLL ANIMATION ---
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+// --- 4. MOBILE MENU ---
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+    if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+    } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '70px';
+        nav.style.right = '0';
+        nav.style.width = '100%';
+        nav.style.background = 'rgba(0,0,0,0.95)';
+        nav.style.padding = '2rem';
+    }
 });
