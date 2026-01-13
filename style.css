@@ -262,3 +262,83 @@ footer {
     .countdown-container { gap: 1rem; }
     .time-number { font-size: 2.5rem; }
 }
+
+/* --- RESOURCES (PAGE) STYLES --- */
+.resources-page { align-items: flex-start; padding-top: 140px; }
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+.resource-card {
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.resource-card h3 {
+    font-size: 1.5rem;
+    color: var(--accent-purple);
+    margin-bottom: 1rem;
+}
+.resource-card p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+.resource-card ul {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+.resource-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+.cta-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    align-items: center;
+}
+.resource-highlight {
+    background: linear-gradient(135deg, rgba(20,20,20,0.8) 0%, rgba(50,20,60,0.2) 100%);
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.resource-content h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.resource-content p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.glow-text {
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+}
+.small {
+    font-size: 0.95rem;
+    color: #ddd;
+}
