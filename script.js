@@ -135,7 +135,7 @@ const countdown = () => {
         targetYear++;
     }
 
-    const countDate = new Date(`December 13, ${targetYear} 08:00:00`).getTime();
+    const countDate = new Date(`March 6, ${targetYear} 08:00:00`).getTime();
 
     const update = () => {
         const currentTime = new Date().getTime();
