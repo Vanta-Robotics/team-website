@@ -999,12 +999,61 @@ footer {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
+    border-top: 4px solid var(--accent-purple);
+    /* Accent line instead of logo */
     border-radius: 8px;
-    padding: 2rem;
+    padding: 2.5rem;
+    /* Increased padding */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
     display: flex;
     flex-direction: column;
     min-height: 280px;
+}
+
+.resource-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.resource-card li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.resource-card li::before {
+    content: "›";
+    color: var(--accent-purple);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #fff;
+    font-family: var(--font-head);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    /* Keeps alignment */
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: var(--accent-purple);
+    text-shadow: 0 0 10px var(--accent-glow);
+    transform: translateX(5px);
 }
 
 .resource-card:hover {
@@ -1028,13 +1077,20 @@ footer {
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
-.resource-card h3 {
-    font-size: 1.3rem;
+.resource-card>h3 {
+    font-size: 1.5rem;
+    /* Increased size */
     color: #fff;
-    /* Updated to white for contrast, link is purple */
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+    /* Added spacing for resources page main headers */
     line-height: 1.3;
     font-weight: 700;
+}
+
+.resource-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 .resource-link {
@@ -1122,4 +1178,27 @@ footer {
     border-left: 4px solid var(--accent-purple);
     line-height: 1.4;
     font-weight: 300;
+}
+
+.sponsor-item img.invert-icon {
+    filter: invert(1) grayscale(100%);
+    opacity: 0.8;
+    transform: scale(1.15);
+    /* Make it wider and more prominent */
+    max-height: 90px;
+}
+
+.sponsor-item:hover img.invert-icon {
+    filter: invert(1) grayscale(0%);
+    opacity: 1;
+}
+
+/* Special Astra styling for wider/more visible presence */
+.special-astra {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.special-astra .mentor-pfp-small svg {
+    color: #fff !important;
 }
