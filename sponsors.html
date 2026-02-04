@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,86 +8,154 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-    <a href="index.html" class="logo">VANTA <span>#31000</span></a>
-    <nav>
-        <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#team">Team</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="sponsors.html" class="active">Sponsors</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="menu-toggle">☰</div>
-</header>
-<main>
-    <section id="sponsors">
-        <div class="container">
-            <h2 class="fade-up">MISSION PARTNERS</h2>
-            <p class="fade-up" style="margin-bottom: 2rem; color: #888;">Our journey is made possible by the generous support of our sponsors. Here’s a closer look at the companies powering our mission:</p>
-            <div class="sponsor-grid fade-up">
-                <div class="sponsor-item glass-panel">
-                    <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club">
-                    <p>Hack Club: Sparking creativity and innovation in young minds, Hack Club helps us hack our way to success. Thank you for fueling our code!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="assets/pvh.png" alt="Plus Vacation Homes">
-                    <p>Plus Vacation Homes: Making every stay a plus, they help us build a foundation for robotics excellence. Thanks for giving our team a home advantage!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="assets/orthoped.jpeg" alt="Orthoped">
-                    <p>Orthoped: Supporting us with strength and precision, Orthoped keeps our robotics journey well-aligned. Thanks for helping us stand tall!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="https://astra.com/wp-content/uploads/2020/02/astra-logo-white-final-retina.png" alt="Astra">
-                    <p>Astra: Launching us to new heights, Astra’s support is truly out of this world. Thanks for helping us reach for the stars!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="assets/polymaker.png" alt="Polymaker">
-                    <p>Polymaker: Shaping our future with advanced materials, Polymaker helps us print our dreams into reality. Thanks for adding strength to our builds!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="assets/southstate.webp" alt="Southstate">
-                    <p>Southstate: Banking on innovation, Southstate gives us the capital to compete. Thanks for investing in our success!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="assets/fravel.png" alt="Fravel Brewer">
-                    <p>Fravel Brewer: Brewing up support for our team, Fravel Brewer keeps our spirits high. Thanks for being a key ingredient in our journey!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="assets/akshar.png" alt="Akshar">
-                    <p>Akshar: Guiding us on our robotics adventure, Akshar Tours helps us explore new horizons. Thanks for being our travel partner!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="https://www.diazorthodontics.com/assets/images/spotlight/logo.png" alt="Diaz">
-                    <p>Diaz Orthodontics: Straightening out the path to success, Diaz keeps our smiles and our robots in perfect alignment. Thanks for your support!</p>
-                </div>
-                <div class="sponsor-item glass-panel">
-                    <img src="assets/FIRSTLogoNoText.png" alt="FIRST">
-                    <p>FIRST: Inspiring the next generation of STEM leaders, FIRST is the spark behind our passion. Thanks for igniting our journey!</p>
-                </div>
-            </div>
-            <div class="sponsor-item glass-panel cta-box">
-                <span>+</span>
-                <p>Become a Sponsor! Email us at <a href="mailto:vantarobotics@gmail.com">vantarobotics@gmail.com</a></p>
-            </div>
-        </div>
-    </section>
-</main>
-<footer id="contact">
-    <div class="footer-links">
-        <a href="mailto:vantarobotics@gmail.com">vantarobotics@gmail.com</a>
-        <a href="https://github.com/vanta-robotics/" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Instagram</a>
-    </div>
-    <img src="assets/FTCLogoWhite.png" alt="FTC Logo" class="footer-logo">
-    <p>© 2025-2026 Vanta Robotics - FTC Team #31000. All Rights Reserved.</p>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
+    <link
+        href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&family=Space+Grotesk:wght@300;400;600&display=swap"
+        rel="stylesheet">
 
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <!-- 3D Background -->
+    <div id="canvas-container"></div>
+
+    <header>
+        <a href="index.html" class="logo">VANTA <span>#31000</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="sponsors.html" class="active">Sponsors</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+    <main>
+        <section id="sponsors-hero"
+            style="min-height: auto; padding-top: 140px; padding-bottom: 0; text-align: center;">
+            <div class="container">
+                <h1 class="hero-title fade-up" style="font-size: 4rem;">OUR SPONSORS</h1>
+                <p class="fade-up" style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">
+                    Empowering the next generation of engineers, leaders, and innovators.
+                </p>
+            </div>
+        </section>
+
+        <section id="sponsors-list">
+            <div class="container">
+                <div class="sponsor-grid fade-up">
+                    <div class="sponsor-item glass-panel">
+                        <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club">
+                        <p>Hack Club: Sparking creativity in young minds. Thanks for fueling our code!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="assets/pvh.png" alt="Plus Vacation Homes">
+                        <p>Plus Vacation Homes: Thanks for giving our team a home advantage!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="assets/orthoped.jpeg" alt="Orthoped">
+                        <p>Orthoped: Thanks for helping us stand tall and stay aligned!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="assets/astra.png" alt="Astra">
+                        <p>Astra: Thanks for helping us reach for the stars!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="assets/polymaker.png" alt="Polymaker">
+                        <p>Polymaker: Thanks for adding strength to our every build!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="assets/southstate.webp" alt="Southstate">
+                        <p>Southstate: Thanks for investing in our success!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="assets/fravel.png" alt="Fravel Brewer">
+                        <p>Fravel Brewer: Thanks for being a key ingredient in our journey!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="assets/akshar.png" alt="Akshar">
+                        <p>Akshar: Thanks for helping our team go places!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="https://www.diazorthodontics.com/assets/images/spotlight/logo.png" alt="Diaz">
+                        <p>Diaz Orthodontics: Thanks for keeping our smiles aligned!</p>
+                    </div>
+                    <div class="sponsor-item glass-panel">
+                        <img src="assets/FIRSTLogoNoText.png" alt="FIRST">
+                        <p>FIRST: Thanks for being the spark behind our passion!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" style="margin-top: 0;">
+            <div class="container">
+                <h2 class="fade-up">WHY SPONSOR US?</h2>
+
+                <div class="impact-grid fade-up"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="impact-card glass-panel" style="text-align: left;">
+                        <h3 style="color: var(--accent-purple); margin-bottom: 1rem; font-size: 1.5rem;">Champion
+                            Innovators</h3>
+                        <p style="color: #ccc;">We are the <strong>#1 Ranked Team</strong> in our league and are proud
+                            to represent our community at the <strong>State Championship in Florida</strong>. Your
+                            support directly fuels competitive excellence.</p>
+                    </div>
+
+                    <div class="impact-card glass-panel" style="text-align: left;">
+                        <h3 style="color: var(--accent-purple); margin-bottom: 1rem; font-size: 1.5rem;">Global
+                            Mentorship</h3>
+                        <p style="color: #ccc;">We don't just build robots; we build teams. We mentor students locally
+                            and have started new robotics teams internationally in <strong>Pakistan and Puerto
+                                Rico</strong>, spreading STEM education worldwide.</p>
+                    </div>
+
+                    <div class="impact-card glass-panel" style="text-align: left;">
+                        <h3 style="color: var(--accent-purple); margin-bottom: 1rem; font-size: 1.5rem;">Massive Reach
+                        </h3>
+                        <p style="color: #ccc;">Our online resources, tutorials, and open-source tools have reached over
+                            <strong>200,000+ people</strong>. Partnering with us means visibility across a massive,
+                            engaged global audience of tech enthusiasts.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cta-section glass-panel fade-up"
+                    style="margin-top: 4rem; padding: 4rem; text-align: center; border-color: var(--accent-purple);">
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">Join The Mission</h3>
+                    <p style="max-width: 600px; margin: 0 auto 2rem; color: #ccc;">
+                        Help us continue to inspire, engineer, and lead. Become a sponsor today and be part of our
+                        journey to the championship and beyond.
+                    </p>
+                    <a href="mailto:vantarobotics@gmail.com" class="btn-fill" style="margin-top: 1rem;">
+                        Contact Us To Sponsor
+                    </a>
+                    <p style="margin-top: 1.5rem; color: #aaa; font-size: 0.9rem;">
+                        Alternatively, you can email us at <a href="mailto:vantarobotics@gmail.com"
+                            style="color: var(--accent-purple); text-decoration: underline;">vantarobotics@gmail.com</a>
+                        to get in touch.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <div class="footer-links">
+            <a href="mailto:vantarobotics@gmail.com">vantarobotics@gmail.com</a>
+            <a href="https://github.com/vanta-robotics/" target="_blank">GitHub</a>
+            <a href="https://www.instagram.com/vantarobotics/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@vantarobotics" target="_blank">TikTok</a>
+            <a href="https://linktr.ee/ftc31000" target="_blank">Linktree</a>
+            <a href="https://ftcscout.org/teams/31000" target="_blank">FTC Scout</a>
+            <a href="https://ftc-events.firstinspires.org/2025/team/31000" target="_blank">FTC Events</a>
+        </div>
+        <img src="assets/FTCLogoWhite.png" alt="FTC Logo" class="footer-logo">
+        <p>© 2025-2026 Vanta Robotics - FTC Team #31000. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

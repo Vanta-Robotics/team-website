@@ -1,6 +1,8 @@
 // --- 1. THREE.JS BACKGROUND SCENE ---
 const initThreeJS = () => {
     const container = document.getElementById('canvas-container');
+    if (!container) return; // Exit if container doesn't exist
+
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0x000000, 0.002); // Slightly denser fog for mystery
 
@@ -18,7 +20,7 @@ const initThreeJS = () => {
     const starsCount = 1200; // Fewer stars
     const posArray = new Float32Array(starsCount * 3);
 
-    for(let i = 0; i < starsCount * 3; i++) {
+    for (let i = 0; i < starsCount * 3; i++) {
         posArray[i] = (Math.random() - 0.5) * 180;
     }
     starsGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
@@ -39,7 +41,7 @@ const initThreeJS = () => {
     const colorInside = new THREE.Color(0x3c096c); // Deep dark purple
     const colorOutside = new THREE.Color(0x9d4edd); // Soft purple
 
-    for(let i = 0; i < diskCount; i++) {
+    for (let i = 0; i < diskCount; i++) {
         const angle = Math.random() * Math.PI * 2;
         // Thinner ring
         const radius = 7 + Math.random() * 4;
@@ -48,14 +50,14 @@ const initThreeJS = () => {
         // Flatter disk
         const y = (Math.random() - 0.5) * 0.2;
 
-        diskPos[i*3] = x;
-        diskPos[i*3+1] = y;
-        diskPos[i*3+2] = z;
+        diskPos[i * 3] = x;
+        diskPos[i * 3 + 1] = y;
+        diskPos[i * 3 + 2] = z;
 
         const mixedColor = colorInside.clone().lerp(colorOutside, (radius - 7) / 4);
-        diskColors[i*3] = mixedColor.r;
-        diskColors[i*3+1] = mixedColor.g;
-        diskColors[i*3+2] = mixedColor.b;
+        diskColors[i * 3] = mixedColor.r;
+        diskColors[i * 3 + 1] = mixedColor.g;
+        diskColors[i * 3 + 2] = mixedColor.b;
     }
 
     diskGeometry.setAttribute('position', new THREE.BufferAttribute(diskPos, 3));
@@ -127,11 +129,14 @@ initThreeJS();
 
 // --- 2. COUNTDOWN TIMER (Target: Dec 13) ---
 const countdown = () => {
+    const dEl = document.getElementById('d');
+    if (!dEl) return; // Exit if countdown elements don't exist
+
     const now = new Date();
     let targetYear = now.getFullYear();
     const targetDate = new Date(`December 13, ${targetYear} 00:00:00`).getTime();
 
-    if(now.getTime() > targetDate) {
+    if (now.getTime() > targetDate) {
         targetYear++;
     }
 
@@ -152,7 +157,7 @@ const countdown = () => {
         const s = Math.floor((gap % minute) / second);
 
         if (gap > 0) {
-            document.getElementById('d').innerText = d < 10 ? '0' + d : d;
+            dEl.innerText = d < 10 ? '0' + d : d;
             document.getElementById('h').innerText = h < 10 ? '0' + h : h;
             document.getElementById('m').innerText = m < 10 ? '0' + m : m;
             document.getElementById('s').innerText = s < 10 ? '0' + s : s;

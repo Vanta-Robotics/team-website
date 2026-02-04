@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&family=Space+Grotesk:wght@300;400;600&display=swap"
+        rel="stylesheet">
 
     <!-- CSS Link -->
     <link rel="stylesheet" href="style.css">
@@ -16,186 +19,510 @@
     <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
+
 <body>
 
-<!-- 3D Background -->
-<div id="canvas-container"></div>
+    <!-- 3D Background -->
+    <div id="canvas-container"></div>
 
-<header>
-    <a href="#" class="logo">VANTA <span>#31000</span></a>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="sponsors.html">Sponsors</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="menu-toggle">☰</div>
-</header>
+    <header>
+        <a href="#" class="logo">VANTA <span>#31000</span></a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
 
-<main>
-    <!-- HERO -->
-    <section id="hero">
-        <div class="hero-content">
-            <p class="hero-subtitle fade-up">Engineering the Unknown</p>
-            <h1 class="hero-title fade-up">VANTA<br>ROBOTICS</h1>
-            <div class="fade-up btn-container">
-                <a href="#about" class="btn">Discover More</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">↓</div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="container">
-            <h2 class="fade-up">WHO WE ARE</h2>
-            <div class="about-grid fade-up">
-                <div class="about-text glass-panel">
-                    <p>Based in the vibrant tech hub of Orlando, Florida, Vanta Robotics is a dedicated FIRST Tech Challenge team fueled by a passion for innovation and problem-solving.</p>
-                    <p>We are a collective of students, mentors, and community members committed to pushing the boundaries of technology through collaboration, creativity, and competition. Our mission is to inspire the next generation of STEM leaders while building advanced, competitive robots.</p>
-                </div>
-                <div class="stats-container">
-                    <div class="stat fade-up" style="transition-delay: 0.1s"><h3>20+</h3><p>Years FTC Experience</p></div>
-                    <div class="stat fade-up" style="transition-delay: 0.2s"><h3>15+</h3><p>Years FRC Experience</p></div>
-                    <div class="stat fade-up" style="transition-delay: 0.3s"><h3>11</h3><p>Passionate Members</p></div>
+    <main>
+        <!-- HERO -->
+        <section id="hero">
+            <div class="hero-content">
+                <p class="hero-subtitle fade-up">Engineering the Unknown</p>
+                <h1 class="hero-title fade-up">VANTA<br>ROBOTICS</h1>
+                <div class="fade-up btn-container">
+                    <a href="#about" class="btn">Discover More</a>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="scroll-indicator">↓</div>
+        </section>
 
-    <!-- TEAM -->
-    <section id="team">
-        <div class="container">
-            <h2 class="fade-up">MEET THE TEAM</h2>
-
-            <h3 class="team-category fade-up">Team Members</h3>
-            <div class="team-grid">
-                <!-- Original Members & Bios -->
-                <div class="team-card glass-panel fade-up"><h4>Ismail Akdeniz</h4><span class="member-role">Mechanical Design & 3D Printing</span><div class="member-bio">Ismail translates complex digital concepts into tangible reality, specializing in rapid prototyping and manufacturing with our in-house 3D printing capabilities.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Arav Sonawane</h4><span class="member-role">CAD & System Architecture</span><div class="member-bio">As a lead designer, Arav architects the robot's core structure in CAD, ensuring every component integrates flawlessly for peak performance and reliability.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Monish Saravana</h4><span class="member-role">Software Development & Digital Outreach</span><div class="member-bio">Monish spearheads our software strategy, developing advanced control systems and computer vision, while also creating digital tools to empower the wider FTC community.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Shiva Patel</h4><span class="member-role">Brand Architect & Digital Engagement</span><div class="member-bio">Shiva is the architect of our public identity, igniting community hype and forging the strategic brand partnerships that will make Vanta Robotics a globally recognized name.</div></div>
-                    <div class="team-card glass-panel fade-up"><h4>Josef Junga</h4><span class="member-role">Game Strategy & Integration</span><div class="member-bio">Josef is our strategic mind, analyzing the game to devise winning tactics and ensuring our robot's design directly serves our competitive goals.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Shrey Trivedi</h4><span class="member-role">Drive Team & Performance Tuning</span><div class="member-bio">With ice in his veins, Shrey pilots the robot during competition, translating strategy into action and providing critical feedback for performance tuning.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Armando Collazo</h4><span class="member-role">CNC Fabrication & Machining</span><div class="member-bio">Armando brings precision engineering to the team, utilizing CNC fabrication to create custom-machined parts that offer unparalleled strength and accuracy.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Eydan Collazo</h4><span class="member-role">Mechanical Assembly & Prototyping</span><div class="member-bio">Eydan is a versatile builder, rapidly iterating on mechanical prototypes and meticulously assembling the final robot with a keen eye for detail and durability.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Anum Ali</h4><span class="member-role">Social & Meida</span><div class="member-bio">Anum manages the robot's nervous system, meticulously wiring the electronics and optimizing power distribution to ensure flawless operation under pressure.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Daniyal Siddiquie</h4><span class="member-role">Hardware & Software Integration</span><div class="member-bio">Daniyal serves as the crucial link between our code and our physical machine, ensuring that software commands translate perfectly into mechanical action.</div></div>
-            </div>
-
-            <h3 class="team-category fade-up">Coaches & Mentors</h3>
-            <div class="team-grid">
-                <div class="team-card glass-panel fade-up"><h4>Dmitri Morales</h4><span class="member-role">Head Coach & Mentor - Disney Software Engineer</span><div class="member-bio">As Head Coach, Dmitri channels his experience as a Disney Software Engineer and Duke Bioengineering graduate to architect our technical strategy and push the boundaries of what's possible in FTC.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Tom Wilk Jr.</h4><span class="member-role">Mentor - Walt Disney Imagineering</span><div class="member-bio">Tom brings the magic of Walt Disney Imagineering to our workshop, providing unparalleled insight into professional robotics and animatronics to help us engineer truly innovative mechanical systems.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Eleni Morales</h4><span class="member-role">Mentor - MIT BattleBots</span><div class="member-bio">Bringing a battle-hardened perspective from the legendary MIT BattleBots team, Eleni mentors our design process with a focus on durability, rapid prototyping, and the creative problem-solving required to win.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Irian De Jesus</h4><span class="member-role">Coach</span><div class="member-bio">Irian provides essential guidance and project management, keeping the team focused, organized, and prepared for the logistical challenges of a competitive season.</div></div>
-                <div class="team-card glass-panel fade-up"><h4>Tristan Junga</h4><span class="member-role">Coach & Alumni Advisor</span><div class="member-bio">Leveraging his extensive FIRST experience and studies at the University of Florida, Tristan offers invaluable technical advice and strategic insight to the team.</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RESOURCES SECTION -->
-    <section id="resources">
-        <div class="container">
-            <h2 class="fade-up">RESOURCES</h2>
-            <div class="resource-highlight fade-up">
-                <div class="resource-content">
-                    <h3 class="glow-text">Tools & Media from Vanta</h3>
-                    <p>We build tools and media to help FTC teams scout smarter, prepare for judging, and learn—explore our analytics, portfolio coach, and extensive video collection below.</p>
-                </div>
-            </div>
-
-            <div class="resources-grid compact-tools fade-up" style="margin-top: 2rem;">
-                <div class="glass-panel resource-card">
-                    <img src="assets/FTCLogoWhite.png" alt="Secrets Logo" class="resource-icon">
-                    <h3 class="glow-text">Secrets — Advanced Analytics</h3>
-                    <p class="small">secrets.team31000.org — match predictions, time-series tracking, event-wide insights, media mentions, and custom metrics to power scouting and strategy.</p>
-                    <div class="cta-row">
-                        <a href="https://secrets.team31000.org" target="_blank" class="btn-fill">Explore Secrets</a>
-<!--                        <a href="resources.html" class="btn" style="background:transparent; border:1px solid rgba(255,255,255,0.06);">Learn more</a>-->
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <h2 class="fade-up">WHO WE ARE</h2>
+                <div class="about-grid fade-up">
+                    <div class="about-text glass-panel">
+                        <p class="quote-text">"If you want to travel fast, go alone; if you want to travel far, go
+                            together."</p>
+                        <p>Vanta is a collective of 10 robotics veterans who chose to restart as rookies.</p>
+                        <p>We formed Vanta as a foundation project—an engineering incubator dedicated to building the
+                            permanent open-source infrastructure that we wish we had when we first started.</p>
                     </div>
-                </div>
-
-                <div class="glass-panel resource-card">
-                    <img src="assets/FTCLogoWhite.png" alt="Coach Logo" class="resource-icon">
-                    <h3 class="glow-text">Coach — Portfolio & Judging Prep</h3>
-                    <p class="small">coach.team31000.org — upload your portfolio for hyper-personalized feedback, award-fit analysis, concrete action items, and interview prep tailored to your team.</p>
-                    <div class="cta-row">
-                        <a href="https://coach.team31000.org" target="_blank" class="btn-fill">Try Coach</a>
-<!--                        <a href="resources.html" class="btn" style="background:transparent; border:1px solid rgba(255,255,255,0.06);">See features</a>-->
-                    </div>
-                </div>
-
-                <div class="glass-panel resource-card">
-                    <img src="assets/plus.svg" alt="Blogs Logo" class="resource-icon">
-                    <h3 class="glow-text">Blogs — Tips & How-tos</h3>
-                    <p class="small">blogs.team31000.org — a huge collection of vlogs and tutorials covering design, programming, scouting, strategy, outreach, and more. Learn from our demos and team insights.</p>
-                    <div class="cta-row">
-                        <a href="https://blogs.team31000.org" target="_blank" class="btn-fill">Visit Blogs</a>
-<!--                        <a href="resources.html" class="btn" style="background:transparent; border:1px solid rgba(255,255,255,0.06);">All resources</a>-->
+                    <div class="stats-container">
+                        <div class="stat fade-up" style="transition-delay: 0.1s">
+                            <h3>20+</h3>
+                            <p>Years FTC Experience</p>
+                        </div>
+                        <div class="stat fade-up" style="transition-delay: 0.2s">
+                            <h3>15+</h3>
+                            <p>Years FRC Experience</p>
+                        </div>
+                        <div class="stat fade-up" style="transition-delay: 0.3s">
+                            <h3>10</h3>
+                            <p>Robotics Veterans</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-         </div>
-     </section>
+        <!-- TEAM -->
+        <section id="team">
+            <div class="container">
+                <h2 class="fade-up">MEET THE TEAM</h2>
 
-    <!-- INCOMING / COUNTDOWN -->
-    <section id="incoming">
-        <div class="container">
-            <h2 class="fade-up">BOT INCOMING</h2>
+                <h3 class="team-category fade-up">Team Members</h3>
+                <div class="team-grid">
+                    <!-- Original Members & Bios -->
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Ismail Akdeniz</h4><span class="member-role">Mechanical Design & 3D Printing</span>
+                        <div class="member-bio">Ismail translates complex digital concepts into tangible reality,
+                            specializing in rapid prototyping and manufacturing with our in-house 3D printing
+                            capabilities.</div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Arav Sonawane</h4><span class="member-role">CAD & System Architecture</span>
+                        <div class="member-bio">As a lead designer, Arav architects the robot's core structure in CAD,
+                            ensuring every component integrates flawlessly for peak performance and reliability.</div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Monish Saravana</h4><span class="member-role">Software Development & Digital Outreach</span>
+                        <div class="member-bio">Monish spearheads our software strategy, developing advanced control
+                            systems and computer vision, while also creating digital tools to empower the wider FTC
+                            community.</div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Shiva Patel</h4><span class="member-role">Brand Architect & Digital Engagement</span>
+                        <div class="member-bio">Shiva is the architect of our public identity, igniting community hype
+                            and forging the strategic brand partnerships that will make Vanta Robotics a globally
+                            recognized name.</div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Josef Junga</h4><span class="member-role">Game Strategy & Integration</span>
+                        <div class="member-bio">Josef is our strategic mind, analyzing the game to devise winning
+                            tactics and ensuring our robot's design directly serves our competitive goals.</div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Shrey Trivedi</h4><span class="member-role">Drive Team & Performance Tuning</span>
+                        <div class="member-bio">With ice in his veins, Shrey pilots the robot during competition,
+                            translating strategy into action and providing critical feedback for performance tuning.
+                        </div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Armando Collazo</h4><span class="member-role">CNC Fabrication & Machining</span>
+                        <div class="member-bio">Armando brings precision engineering to the team, utilizing CNC
+                            fabrication to create custom-machined parts that offer unparalleled strength and accuracy.
+                        </div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Eydan Collazo</h4><span class="member-role">Mechanical Assembly & Prototyping</span>
+                        <div class="member-bio">Eydan is a versatile builder, rapidly iterating on mechanical prototypes
+                            and meticulously assembling the final robot with a keen eye for detail and durability.</div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Anum Ali</h4><span class="member-role">Social & Media</span>
+                        <div class="member-bio">Anum manages the robot's nervous system, meticulously wiring the
+                            electronics and optimizing power distribution to ensure flawless operation under pressure.
+                        </div>
+                    </div>
+                    <div class="team-card glass-panel fade-up">
+                        <h4>Daniyal Siddiquie</h4><span class="member-role">Hardware & Software Integration</span>
+                        <div class="member-bio">Daniyal serves as the crucial link between our code and our physical
+                            machine, ensuring that software commands translate perfectly into mechanical action.</div>
+                    </div>
+                </div>
 
-            <div class="countdown-container fade-up">
-                <div class="time-box"><span class="time-number" id="d">00</span><span class="time-label">Days</span></div>
-                <div class="time-box"><span class="time-number" id="h">00</span><span class="time-label">Hours</span></div>
-                <div class="time-box"><span class="time-number" id="m">00</span><span class="time-label">Minutes</span></div>
-                <div class="time-box"><span class="time-number" id="s">00</span><span class="time-label">Seconds</span></div>
+                <h3 class="team-category fade-up">Mentors & Coaches</h3>
+                <div class="team-grid mentors-grid">
+                    <!-- Dmitri Morales -->
+                    <div class="team-card mentor-card glass-panel fade-up">
+                        <div class="mentor-header-compact">
+                            <div class="mentor-pfp-small"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg></div>
+                            <div class="mentor-identity">
+                                <h4>Dmitri Morales <span class="role-badge">[LEAD]</span></h4>
+                                <span class="mentor-role">Software Engineer @ Disney</span>
+                                <span class="mentor-role-sub">Duke Biomedical Engineering Graduate</span>
+                            </div>
+                        </div>
+                        <div class="mentor-tags-row">
+                            <span class="tag pill cold-email">Cold Email</span>
+                            <span class="tag pill software">Software</span>
+                        </div>
+                        <ul class="mentor-points compact-points">
+                            <li><strong>Assisted</strong> with maintaining clean codebase (industry standards)</li>
+                            <li><strong>Taught</strong> us about state-machines</li>
+                        </ul>
+                    </div>
+
+                    <!-- Eleni Morales -->
+                    <div class="team-card mentor-card glass-panel fade-up">
+                        <div class="mentor-header-compact">
+                            <div class="mentor-pfp-small"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg></div>
+                            <div class="mentor-identity">
+                                <h4>Eleni Morales <span class="role-badge">[LEAD]</span></h4>
+                                <span class="mentor-role">MIT Combat Robotics Manufacturing Lead</span>
+                                <span class="mentor-role-sub">Engineering Student @ MIT</span>
+                            </div>
+                        </div>
+                        <div class="mentor-tags-row">
+                            <span class="tag pill cold-email">Cold Email</span>
+                            <span class="tag pill hardware">Hardware</span>
+                        </div>
+                        <ul class="mentor-points compact-points">
+                            <li><strong>Assisted</strong> with durable design</li>
+                            <li><strong>Taught</strong> us to pocket for weight optimization</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tristan Junga -->
+                    <div class="team-card mentor-card glass-panel fade-up">
+                        <div class="mentor-header-compact">
+                            <div class="mentor-pfp-small"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg></div>
+                            <div class="mentor-identity">
+                                <h4>Tristan Junga</h4>
+                                <span class="mentor-role">Environmental Engineering @ UF</span>
+                                <span class="mentor-role-sub">FIRST Tech Challenge & FRC Alumni</span>
+                            </div>
+                        </div>
+                        <div class="mentor-tags-row">
+                            <span class="tag pill alumni">FIRST Alumni</span>
+                            <span class="tag pill hardware">Hardware</span>
+                        </div>
+                        <ul class="mentor-points compact-points">
+                            <li><strong>Assisted</strong> with limelight relocalization</li>
+                            <li><strong>Taught</strong> us to optimize auto pathing</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tom Wilk -->
+                    <div class="team-card mentor-card glass-panel fade-up">
+                        <div class="mentor-header-compact">
+                            <div class="mentor-pfp-small"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg></div>
+                            <div class="mentor-identity">
+                                <h4>Tom Wilk</h4>
+                                <span class="mentor-role">Lead Robotics Engineer @ Disney</span>
+                                <span class="mentor-role-sub">Walt Disney Imagineering</span>
+                            </div>
+                        </div>
+                        <div class="mentor-tags-row">
+                            <span class="tag pill cold-email">Cold Email</span>
+                            <span class="tag pill hardware">Hardware</span>
+                        </div>
+                        <ul class="mentor-points compact-points">
+                            <li><strong>Assisted</strong> w/ Sensor Integration</li>
+                            <li><strong>Taught</strong> about low pass Filters</li>
+                        </ul>
+                    </div>
+
+                    <!-- Irian De Jesus -->
+                    <div class="team-card mentor-card glass-panel fade-up">
+                        <div class="mentor-header-compact">
+                            <div class="mentor-pfp-small"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg></div>
+                            <div class="mentor-identity">
+                                <h4>Irian De Jesus</h4>
+                                <span class="mentor-role">Pharmacist @ Elevance Health</span>
+                            </div>
+                        </div>
+                        <div class="mentor-tags-row">
+                            <span class="tag pill connection">Connection</span>
+                            <span class="tag pill outreach">Outreach</span>
+                        </div>
+                        <ul class="mentor-points compact-points">
+                            <li><strong>Assisted</strong> with presentation skills</li>
+                            <li><strong>Taught</strong> how to mentor/teach effectively</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ashish Trivedi -->
+                    <div class="team-card mentor-card glass-panel fade-up">
+                        <div class="mentor-header-compact">
+                            <div class="mentor-pfp-small"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg></div>
+                            <div class="mentor-identity">
+                                <h4>Ashish Trivedi</h4>
+                                <span class="mentor-role">Senior Architecture Director @ GE</span>
+                                <span class="mentor-role-sub">General Electric</span>
+                            </div>
+                        </div>
+                        <div class="mentor-tags-row">
+                            <span class="tag pill connection">Connection</span>
+                            <span class="tag pill software">Software</span>
+                        </div>
+                        <ul class="mentor-points compact-points">
+                            <li><strong>Assisted</strong> optimizing looptimes w/ bulk reads</li>
+                            <li><strong>Taught</strong> Version Control using Git</li>
+                        </ul>
+                    </div>
+
+                    <!-- Shashikant S. -->
+                    <div class="team-card mentor-card glass-panel fade-up">
+                        <div class="mentor-header-compact">
+                            <div class="mentor-pfp-small"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg></div>
+                            <div class="mentor-identity">
+                                <h4>Shashikant S.</h4>
+                                <span class="mentor-role">Director of Tech @ Disney</span>
+                            </div>
+                        </div>
+                        <div class="mentor-tags-row">
+                            <span class="tag pill connection">Connection</span>
+                            <span class="tag pill hardware">Hardware</span>
+                        </div>
+                        <ul class="mentor-points compact-points">
+                            <li><strong>Assisted</strong> implementing driver enhancements</li>
+                            <li><strong>Taught</strong> us about implementing failsafes</li>
+                        </ul>
+                    </div>
+
+                    <!-- ASTRA TEAM -->
+                    <div class="team-card mentor-card glass-panel fade-up special-astra">
+                        <div class="mentor-header-compact">
+                            <div class="mentor-pfp-small"><svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg></div>
+                            <div class="mentor-identity">
+                                <h4>ASTRA TEAM</h4>
+                                <span class="mentor-role">Aerospace Company </span>
+                            </div>
+                        </div>
+                        <div class="mentor-tags-row">
+                            <span class="tag pill cold-email">Cold Email</span>
+                            <span class="tag pill outreach">Outreach</span>
+                            <span class="tag pill hardware">Hardware</span>
+                        </div>
+                        <ul class="mentor-points compact-points">
+                            <li>Early Season CAD Reviews</li>
+                            <li>Taught us about 4+ axis CNC Machining</li>
+                            <li>Strategy calls w/ Senior Creative Director</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <p class="fade-up eclipse-text">Get Ready for <span class="eclipse-name">Eclipse</span></p>
-        </div>
-    </section>
+        <!-- RESOURCES SECTION -->
+        <section id="resources">
+            <div class="container">
+                <h2 class="fade-up">RESOURCES</h2>
+                <div class="resource-highlight fade-up">
+                    <div class="resource-content">
+                        <h3 class="glow-text">Tools & Media from Vanta</h3>
+                        <p>We build tools and media to help FTC teams scout smarter, prepare for judging, and
+                            learn—explore our analytics, portfolio coach, and extensive video collection below.</p>
+                    </div>
+                </div>
 
-    <!-- SPONSORS -->
-    <section id="sponsors">
-        <div class="container">
-            <h2 class="fade-up">MISSION PARTNERS</h2>
-            <p class="fade-up" style="margin-bottom: 2rem; color: #888;">Our journey is made possible by the generous support of our sponsors.</p>
-            <div class="sponsor-grid fade-up">
-                <a href="https://hcb.hackclub.com/vanta-robotics/" target="_blank" class="sponsor-item"><img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club"></a>
-                <a href="https://plusvacationhomes.com/" target="_blank" class="sponsor-item"><img src="assets/pvh.png" alt="Plus Vacation Homes"></a>
-                <a href="https://www.linkedin.com/company/orthoped-distributors/" target="_blank" class="sponsor-item"><img src="assets/orthoped.jpeg" alt="Orthoped"></a>
-                <a href="https://astra.com/" target="_blank" class="sponsor-item"><img src="https://astra.com/wp-content/uploads/2020/02/astra-logo-white-final-retina.png" alt="Astra"></a>
-                <a href="https://us.polymaker.com/" target="_blank" class="sponsor-item"><img src="assets/polymaker.png" alt="Polymaker"></a>
-                <a href="https://www.southstatebank.com/" target="_blank" class="sponsor-item"><img src="assets/southstate.webp" alt="Southstate"></a>
-                <a href="https://www.fravelbrewer.com/" target="_blank" class="sponsor-item"><img src="assets/fravel.png" alt="Fravel Brewer"></a>
-                <a href="https://www.akshartours.us/" target="_blank" class="sponsor-item"><img src="assets/akshar.png" alt="Akshar"></a>
-                <a href="https://www.diazorthodontics.com/" target="_blank" class="sponsor-item"><img src="https://www.diazorthodontics.com/assets/images/spotlight/logo.png" alt="Diaz"></a>
-                <a href="https://www.firstinspires.org/" target="_blank" class="sponsor-item"><img src="assets/FIRSTLogoNoText.png" alt="FIRST"></a>
-                <a href="sponsors.html" class="sponsor-item cta-box">
-                    <span>→</span>
-                    <p>See all sponsors</p>
-                </a>
+                <div class="resources-grid compact-tools fade-up" style="margin-top: 2rem;">
+
+                    <!-- Secrets -->
+                    <div class="resource-card">
+                        <div class="card-header">
+                            <h3>SECRETS</h3>
+                        </div>
+                        <a href="https://secrets.team31000.org" target="_blank"
+                            class="resource-link">secrets.team31000.org</a>
+                        <p class="card-description">Match predictions, time-series tracking, event-wide insights, media
+                            mentions, and custom metrics to power scouting and strategy.</p>
+                    </div>
+
+                    <!-- Coach -->
+                    <div class="resource-card">
+                        <div class="card-header">
+                            <h3>COACH</h3>
+                        </div>
+                        <a href="https://coach.team31000.org" target="_blank"
+                            class="resource-link">coach.team31000.org</a>
+                        <p class="card-description">Upload your portfolio for hyper-personalized feedback, award-fit
+                            analysis, concrete action items, and interview prep tailored to your team.</p>
+                    </div>
+
+                    <!-- Blogs -->
+                    <div class="resource-card">
+                        <div class="card-header">
+                            <img src="assets/plus.svg" alt="Blogs Icon" class="integrated-icon">
+                            <h3>BLOGS</h3>
+                        </div>
+                        <a href="https://blogs.team31000.org" target="_blank"
+                            class="resource-link">blogs.team31000.org</a>
+                        <p class="card-description">A huge collection of vlogs and tutorials covering design,
+                            programming, scouting, strategy, outreach, and more.</p>
+                    </div>
+
+                    <!-- ISM (Infinite State Machines) -->
+                    <div class="resource-card">
+                        <div class="card-header">
+                            <img src="assets/FTCLogoWhite.png" alt="ISM Icon" class="integrated-icon">
+                            <h3>ISM</h3>
+                        </div>
+                        <a href="https://ism.team31000.org" target="_blank" class="resource-link">ism.team31000.org</a>
+                        <p class="card-description">Thorough and complex yet accessible. Create complex autonomies using
+                            our state machine system with trace back and branching. <br><span
+                                style="font-size:0.85em; opacity:0.7;">(Open Source - Coming Soon)</span></p>
+                    </div>
+
+                </div>
+
             </div>
+        </section>
+
+        <!-- ROBOT SHOWCASE (Split Layout) -->
+        <section id="robot-showcase">
+            <div class="container">
+                <h2 class="fade-up section-title">OUR ROBOTS</h2>
+
+                <div class="split-layout">
+                    <!-- NIGHT FURY (Left) -->
+                    <div class="showcase-left fade-up">
+                        <h3 class="robot-title">NIGHT FURY</h3>
+
+                        <div class="countdown-container compact">
+                            <div class="time-box"><span class="time-number" id="d">00</span><span
+                                    class="time-label">Days</span></div>
+                            <div class="time-box"><span class="time-number" id="h">00</span><span
+                                    class="time-label">Hours</span></div>
+                            <div class="time-box"><span class="time-number" id="m">00</span><span
+                                    class="time-label">Mins</span></div>
+                            <div class="time-box"><span class="time-number" id="s">00</span><span
+                                    class="time-label">Secs</span></div>
+                        </div>
+
+                        <p class="eclipse-text">Get Ready for <span class="eclipse-name">Night Fury</span></p>
+                        <p class="championship-details">FLORIDA CHAMPIONSHIPS • MARCH 6 & 7</p>
+                    </div>
+
+                    <!-- ECLIPSE (Right) -->
+                    <div class="showcase-right fade-up">
+                        <h3 class="robot-title">ECLIPSE</h3>
+
+                        <div class="eclipse-showcase">
+                            <img src="assets/Eclipse.png" alt="Eclipse Robot" class="eclipse-img">
+                        </div>
+
+                        <div class="eclipse-details">
+                            <p class="highlight-text">Our League Championship Contender</p>
+                            <p class="specs-text">
+                                Featuring an <span class="g-text">Turret</span>,
+                                <span class="g-text">Back-to-Back-to-Back Shooting</span>, <span
+                                    class="g-text">Limelight</span>, Integration and a <span class="g-text">12-ball
+                                    Autonomous</span>.
+                            </p>
+
+                            <div class="awards-grid">
+                                <div class="award-item">
+                                    <span class="award-icon">🏆</span>
+                                    <div>
+                                        <strong>INSPIRE 1st Place</strong>
+                                        <span class="small-sub">Overall Excellence</span>
+                                    </div>
+                                </div>
+                                <div class="award-item">
+                                    <span class="award-icon">🥈</span>
+                                    <div>
+                                        <strong>Finalist Alliance</strong>
+                                        <span class="small-sub">Robot Performance</span>
+                                    </div>
+                                </div>
+                                <div class="award-item">
+                                    <span class="award-icon">📈</span>
+                                    <div>
+                                        <strong>Rank #1</strong>
+                                        <span class="small-sub">Orlando League (Adv. Points)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- SPONSORS -->
+        <section id="sponsors">
+            <div class="container">
+                <h2 class="fade-up">MISSION PARTNERS</h2>
+                <p class="fade-up" style="margin-bottom: 2rem; color: #888;">Our journey is made possible by the
+                    generous support of our sponsors.</p>
+                <div class="sponsor-grid fade-up">
+                    <a href="https://hcb.hackclub.com/vanta-robotics/" target="_blank" class="sponsor-item"><img
+                            src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club"></a>
+                    <a href="https://plusvacationhomes.com/" target="_blank" class="sponsor-item"><img
+                            src="assets/pvh.png" alt="Plus Vacation Homes"></a>
+                    <a href="https://www.linkedin.com/company/orthoped-distributors/" target="_blank"
+                        class="sponsor-item"><img src="assets/orthoped.jpeg" alt="Orthoped"></a>
+                    <a href="https://astra.com/" target="_blank" class="sponsor-item"><img
+                            src="https://astra.com/wp-content/uploads/2020/02/astra-logo-white-final-retina.png"
+                            alt="Astra"></a>
+                    <a href="https://us.polymaker.com/" target="_blank" class="sponsor-item"><img
+                            src="assets/polymaker.png" alt="Polymaker"></a>
+                    <a href="https://www.southstatebank.com/" target="_blank" class="sponsor-item"><img
+                            src="assets/southstate.webp" alt="Southstate"></a>
+                    <a href="https://www.fravelbrewer.com/" target="_blank" class="sponsor-item"><img
+                            src="assets/fravel.png" alt="Fravel Brewer"></a>
+                    <a href="https://www.akshartours.us/" target="_blank" class="sponsor-item"><img
+                            src="assets/akshar.png" alt="Akshar"></a>
+                    <a href="https://www.diazorthodontics.com/" target="_blank" class="sponsor-item"><img
+                            src="https://www.diazorthodontics.com/assets/images/spotlight/logo.png" alt="Diaz"></a>
+                    <a href="https://www.firstinspires.org/" target="_blank" class="sponsor-item"><img
+                            src="assets/FIRSTLogoNoText.png" alt="FIRST"></a>
+                </div>
+                <div class="fade-up" style="margin-top: 3rem;">
+                    <a href="sponsors.html" class="btn">View All Sponsors & Partners</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="footer-links">
+            <a href="mailto:vantarobotics@gmail.com">vantarobotics@gmail.com</a>
+            <a href="https://github.com/vanta-robotics/" target="_blank">GitHub</a>
+            <a href="https://www.instagram.com/vantarobotics/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@vantarobotics" target="_blank">TikTok</a>
+            <a href="https://linktr.ee/ftc31000" target="_blank">Linktree</a>
+            <a href="https://ftcscout.org/teams/31000" target="_blank">FTC Scout</a>
+            <a href="https://ftc-events.firstinspires.org/2025/team/31000" target="_blank">FTC Events</a>
         </div>
-    </section>
+        <img src="assets/FTCLogoWhite.png" alt="FTC Logo" class="footer-logo">
+        <p>© 2025-2026 Vanta Robotics - FTC Team #31000. All Rights Reserved.</p>
+    </footer>
 
-</main>
-
-<footer id="contact">
-    <div class="footer-links">
-        <a href="mailto:vantarobotics@gmail.com">vantarobotics@gmail.com</a>
-        <a href="https://github.com/vanta-robotics/" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Instagram</a>
-    </div>
-    <img src="assets/FTCLogoWhite.png" alt="FTC Logo" class="footer-logo">
-    <p>© 2025-2026 Vanta Robotics - FTC Team #31000. All Rights Reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>
