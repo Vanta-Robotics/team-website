@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos | Vanta Robotics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&family=Space+Grotesk:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4298668087957863"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- 3D Background -->
+    <div id="canvas-container"></div>
+
+    <header>
+        <a href="index.html" class="logo">VANTA <span>#31000</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="videos.html" class="active">Videos</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+
+    <main>
+        <section id="videos-hero" style="min-height: auto; padding-top: 140px; padding-bottom: 0; text-align: center;">
+            <div class="container">
+                <h1 class="hero-title fade-up" style="font-size: 4rem;">VIDEOS</h1>
+                <p class="fade-up" style="max-width: 680px; margin: 0 auto; color: var(--text-muted);">
+                    Choose a video to play. Both are hosted locally in our assets folder for fast, reliable playback.
+                </p>
+            </div>
+        </section>
+
+        <section id="videos-list">
+            <div class="container">
+                <div class="video-grid fade-up">
+                    <div class="video-card glass-panel">
+                        <h3>Multi-Chassis Swerve</h3>
+                        <video controls preload="metadata" playsinline>
+                            <source src="assets/SwerveVideo.mov" type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-caption">Swerve drivetrain showcase.</p>
+                    </div>
+
+                    <div class="video-card glass-panel">
+                        <h3>FIRST Video Edit</h3>
+                        <video controls preload="metadata" playsinline>
+                            <source src="assets/FIRSTVideoEdit.mov" type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-caption">Season highlight reel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-links">
+            <a href="mailto:vantarobotics@gmail.com">vantarobotics@gmail.com</a>
+            <a href="https://github.com/vanta-robotics/" target="_blank">GitHub</a>
+            <a href="https://www.instagram.com/vantarobotics/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@vantarobotics" target="_blank">TikTok</a>
+            <a href="https://linktr.ee/ftc31000" target="_blank">Linktree</a>
+            <a href="https://ftcscout.org/teams/31000" target="_blank">FTC Scout</a>
+            <a href="https://ftc-events.firstinspires.org/2025/team/31000" target="_blank">FTC Events</a>
+        </div>
+        <img src="assets/FTCLogoWhite.png" alt="FTC Logo" class="footer-logo">
+        <p>© 2025-2026 Vanta Robotics - FTC Team #31000. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

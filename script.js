@@ -127,20 +127,18 @@ const initThreeJS = () => {
 
 initThreeJS();
 
-// --- 2. COUNTDOWN TIMER (Target: Dec 13) ---
+// --- 2. COUNTDOWN TIMER (Target: April 29) ---
 const countdown = () => {
     const dEl = document.getElementById('d');
     if (!dEl) return; // Exit if countdown elements don't exist
 
     const now = new Date();
     let targetYear = now.getFullYear();
-    const targetDate = new Date(`December 13, ${targetYear} 00:00:00`).getTime();
-
-    if (now.getTime() > targetDate) {
+    let countDate = new Date(`April 29, ${targetYear} 08:00:00`).getTime();
+    if (now.getTime() > countDate) {
         targetYear++;
+        countDate = new Date(`April 29, ${targetYear} 08:00:00`).getTime();
     }
-
-    const countDate = new Date(`March 6, ${targetYear} 08:00:00`).getTime();
 
     const update = () => {
         const currentTime = new Date().getTime();
