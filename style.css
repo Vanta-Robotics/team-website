@@ -651,6 +651,15 @@ h1.hero-title {
     filter: invert(1) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
 }
 
+.a-star-img {
+    filter: invert(1) brightness(1.6) contrast(1.2);
+    opacity: 1;
+}
+
+.a-star-img:hover {
+    filter: invert(1) brightness(1.6) contrast(1.2) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
+}
+
 .a-star-showcase {
     background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.06), transparent);
 }

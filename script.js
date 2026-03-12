@@ -172,15 +172,21 @@ const initGlitchText = () => {
     if (!el) return;
 
     const charset = '!@#$%^&*()_+=-[]{}<>?/\\|ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const base = 'COMING SOON';
-    const len = base.length;
+    const base = el.textContent.trim();
 
     const randomChar = () => charset[Math.floor(Math.random() * charset.length)];
-    const randomString = () => Array.from({ length: len }, randomChar).join('');
+    const scramble = () =>
+        base
+            .split('')
+            .map((char) => {
+                if (char === ' ') return ' ';
+                return Math.random() < 0.45 ? randomChar() : char;
+            })
+            .join('');
 
     setInterval(() => {
-        el.textContent = randomString();
-    }, 140);
+        el.textContent = scramble();
+    }, 60);
 };
 initGlitchText();
 
