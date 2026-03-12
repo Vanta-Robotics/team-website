@@ -166,6 +166,24 @@ const countdown = () => {
 };
 countdown();
 
+// --- 2b. GLITCH TEXT ---
+const initGlitchText = () => {
+    const el = document.getElementById('glitch-text');
+    if (!el) return;
+
+    const charset = '!@#$%^&*()_+=-[]{}<>?/\\|ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const base = 'COMING SOON';
+    const len = base.length;
+
+    const randomChar = () => charset[Math.floor(Math.random() * charset.length)];
+    const randomString = () => Array.from({ length: len }, randomChar).join('');
+
+    setInterval(() => {
+        el.textContent = randomString();
+    }, 140);
+};
+initGlitchText();
+
 // --- 3. SCROLL ANIMATION ---
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
