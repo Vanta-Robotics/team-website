@@ -173,20 +173,14 @@ const initGlitchText = () => {
 
     const charset = '!@#$%^&*()_+=-[]{}<>?/\\|ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     const base = el.textContent.trim();
+    const len = base.length;
 
     const randomChar = () => charset[Math.floor(Math.random() * charset.length)];
-    const scramble = () =>
-        base
-            .split('')
-            .map((char) => {
-                if (char === ' ') return ' ';
-                return Math.random() < 0.45 ? randomChar() : char;
-            })
-            .join('');
+    const randomString = () => Array.from({ length: len }, randomChar).join('');
 
     setInterval(() => {
-        el.textContent = scramble();
-    }, 60);
+        el.textContent = randomString();
+    }, 140);
 };
 initGlitchText();
 
