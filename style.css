@@ -717,6 +717,25 @@ h1.hero-title {
     font-weight: 600;
 }
 
+.worlds-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0 1.5rem;
+}
+
+.cryptic-text {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.85rem;
+}
+
+.cipher-name {
+    color: var(--accent-purple);
+    font-weight: 600;
+}
+
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 900px) {
     .split-layout {
