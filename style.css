@@ -94,9 +94,6 @@ header {
     color: var(--accent-purple);
     font-weight: 400;
     font-size: 1rem;
-    border: 1px solid var(--accent-purple);
-    padding: 2px 8px;
-    border-radius: 20px;
 }
 
 nav ul {
